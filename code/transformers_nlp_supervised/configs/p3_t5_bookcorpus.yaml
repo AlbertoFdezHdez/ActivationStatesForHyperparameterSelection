@@ -1,0 +1,75 @@
+﻿experiment_id: p3_t5_bookcorpus
+runner: pretraining
+task_type: seq2seq_denoising
+model:
+  family: t5
+  init: scratch
+  tokenizer:
+    name: t5-small
+  config:
+    d_model: 512
+    d_ff: 2048
+    num_layers: 6
+    num_decoder_layers: 6
+    num_heads: 8
+    dropout_rate: 0.1
+dataset:
+  name: rojagtap/bookcorpus
+  config:
+  train_split: train
+  validation_split: train
+  validation_holdout_size: 2048
+  text_columns: [text]
+  streaming: true
+training:
+  betas: [0.95, 0.95]
+  learning_rates: [1.0e-4, 3.0e-4, 8.0e-4, 2.0e-3]
+  weight_decays: [0.0, 1.0e-2, 3.0e-2, 1.0e-1]
+  seeds: [0, 1, 2]
+  max_steps: 30000
+  batch_size: 4
+  gradient_accumulation_steps: 16
+  max_source_length: 512
+  max_target_length: 128
+  noise_density: 0.15
+  mean_noise_span_length: 3.0
+  scheduler: cosine
+  warmup_ratio: 0.03
+  min_lr_ratio: 0.1
+  gradient_clip: 1.0
+  precision: auto
+  log_every: 30
+validation:
+  eval_every: 1500
+  batch_size: 4
+oui:
+  hook_patterns: [DenseReluDense.wi, DenseReluDense.wi_0]
+  sequence_mode: none
+  measure_every: 30
+  probe_size: 4
+  probe_batch_size: 4
+  max_token_samples: 256
+  save_probe_batches: false
+output:
+  results_root: ../../descargas/transformers_nlp_supervised/results
+  save_final_checkpoint: false
+smoke:
+  output:
+    save_final_checkpoint: false
+  training:
+    max_steps: 120
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    max_source_length: 128
+    max_target_length: 64
+    log_every: 30
+  validation:
+    eval_every: 1500
+    batch_size: 1
+    max_batches: 1
+  oui:
+    measure_every: 30
+    probe_size: 1
+    probe_batch_size: 1
+    max_token_samples: 128
+

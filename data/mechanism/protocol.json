@@ -1,0 +1,52 @@
+{
+  "purpose": "Conditional mechanism illustration; separate from selector validation and weight fitting",
+  "activations": [
+    "ReLU",
+    "GELU"
+  ],
+  "architecture": [
+    4,
+    8,
+    8,
+    1
+  ],
+  "training_inputs": 512,
+  "probe_inputs": 256,
+  "target": "sin(x0)+0.5*x1^2+0.25*x2; iid N(0,I4) inputs",
+  "data_seed": 270927,
+  "lr": [
+    0.001,
+    0.01,
+    0.03
+  ],
+  "wd": [
+    0.0,
+    0.01
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "optimizer": "AdamW defaults",
+  "steps": 120,
+  "batch": 64,
+  "checkpoints": [
+    6,
+    12,
+    24,
+    120
+  ],
+  "local_step": "0.05 / lambda_max(Q)",
+  "bias_coordinates": 16,
+  "output_weight_scales": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "elapsed_seconds": 25.936465099977795,
+  "torch_version": "2.10.0.dev20250911+cpu",
+  "numpy_version": "2.3.3",
+  "device": "CPU",
+  "threads": 2
+}

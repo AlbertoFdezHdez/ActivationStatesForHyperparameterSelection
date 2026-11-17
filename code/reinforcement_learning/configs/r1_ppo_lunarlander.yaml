@@ -1,0 +1,39 @@
+experiment_id: r1_ppo_lunarlander
+algorithm: PPO
+env:
+  id: LunarLander-v3
+  kind: gym
+  n_envs: 8
+policy:
+  net_arch:
+    pi: [64, 64]
+    vf: [64, 64]
+  activation: Tanh
+training:
+  total_timesteps: 300000
+hyperparams:
+  n_steps: 1024
+  batch_size: 256
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+tracking:
+  probe_states: 2048
+  eval_episodes: 10
+oui_patterns: []
+smoke:
+  env:
+    n_envs: 1
+  training:
+    total_timesteps: 5000
+  hyperparams:
+    n_steps: 256
+    batch_size: 64
+    n_epochs: 2
+  tracking:
+    probe_states: 256
+    eval_episodes: 2

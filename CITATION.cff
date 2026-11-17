@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite the article and this software release."
+title: "Reading Activation States for Early Hyperparameter Selection: reproducibility package"
+version: 1.0.0
+date-released: 2026-11-17
+license: MIT
+repository-code: "https://github.com/AlbertoFdezHdez/ActivationStatesForHyperparameterSelection"
+type: software
+authors:
+  - family-names: "Fernández-Hernández"
+    given-names: "Alberto"
+    affiliation: "Universitat Politècnica de València"
+  - family-names: "Mestre"
+    given-names: "Jose I."
+    affiliation: "Universitat Politècnica de València"
+  - family-names: "Pérez-Corral"
+    given-names: "Cristian"
+    affiliation: "Universitat Politècnica de València"
+  - family-names: "Dolz"
+    given-names: "Manuel F."
+    affiliation: "Universitat Jaume I"
+  - family-names: "Quintana-Ortí"
+    given-names: "Enrique S."
+    affiliation: "Universitat Politècnica de València"
+keywords:
+  - activation states
+  - layerwise utilization
+  - early selection
+  - hyperparameter optimization
+  - multi-fidelity learning
+preferred-citation:
+  type: article
+  title: "Reading Activation States for Early Hyperparameter Selection"
+  journal: "Neural Networks"
+  status: submitted
+  authors:
+    - family-names: "Fernández-Hernández"
+      given-names: "Alberto"
+    - family-names: "Mestre"
+      given-names: "Jose I."
+    - family-names: "Pérez-Corral"
+      given-names: "Cristian"
+    - family-names: "Dolz"
+      given-names: "Manuel F."
+    - family-names: "Quintana-Ortí"
+      given-names: "Enrique S."

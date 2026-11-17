@@ -1,0 +1,793 @@
+{
+ "source": {
+  "file": "main.tex (Overleaf project export, 2026-11-17)",
+  "sha256": "07635170a3ed0eec41866f9741e5706dbaa14cf7b5fce93b1bc8e022f3af9331"
+ },
+ "values": [
+  {
+   "key": "abstract.runs",
+   "published": "1,104",
+   "context": "On 1,104 completed runs across 23 experiments"
+  },
+  {
+   "key": "abstract.mean_reduction",
+   "published": "26.90",
+   "context": "reduces mean selection regret by 26.90"
+  },
+  {
+   "key": "abstract.cvar25_reduction",
+   "published": "26.93",
+   "context": "by 26.93\\% and 24.11\\%"
+  },
+  {
+   "key": "abstract.cvar5_reduction",
+   "published": "24.11",
+   "context": "by 26.93\\% and 24.11\\%"
+  },
+  {
+   "key": "abstract.heldout_G",
+   "published": "3.01",
+   "context": "mean regret is 3.01\\% versus 3.68\\%"
+  },
+  {
+   "key": "abstract.heldout_E",
+   "published": "3.68",
+   "context": "mean regret is 3.01\\% versus 3.68\\%"
+  },
+  {
+   "key": "sec2.sparsity_17",
+   "published": "3.68",
+   "context": "optimized sparsity control reaches mean regret $3.68\\%$ versus $3.10\\%$"
+  },
+  {
+   "key": "sec2.G_17",
+   "published": "3.10",
+   "context": "optimized sparsity control reaches mean regret $3.68\\%$ versus $3.10\\%$"
+  },
+  {
+   "key": "sec3.observation_tasks",
+   "published": "19",
+   "context": "Utilization comes from training observations in 19 experiments"
+  },
+  {
+   "key": "sec3.cost_median",
+   "published": "0.31",
+   "context": "took a median $0.31\\%$"
+  },
+  {
+   "key": "sec3.cost_p90",
+   "published": "1.16",
+   "context": "(90th percentile $1.16\\%$)"
+  },
+  {
+   "key": "sec3.cost_runs",
+   "published": "1,098",
+   "context": "across the 1,098 runs with timing records"
+  },
+  {
+   "key": "sec3.cost_largest",
+   "published": "5.81",
+   "context": "the largest task median is $5.81\\%$, for RoBERTa--MNLI"
+  },
+  {
+   "key": "sec5.configurations",
+   "published": "362",
+   "context": "the strict comparison uses 362 complete three-seed groups"
+  },
+  {
+   "key": "sec5.own_validation_E",
+   "published": "4.32",
+   "context": "gives mean regret $4.32\\%$ for Evaluation and $3.10\\%$ for $G$"
+  },
+  {
+   "key": "sec5.own_validation_G",
+   "published": "3.10",
+   "context": "gives mean regret $4.32\\%$ for Evaluation and $3.10\\%$ for $G$"
+  },
+  {
+   "key": "sec5.own_validation_cvar_E",
+   "published": "16.67",
+   "context": "with \\acs{CVaR}$_{25}$ $16.67\\%$ versus $12.16\\%$"
+  },
+  {
+   "key": "sec5.own_validation_cvar_G",
+   "published": "12.16",
+   "context": "with \\acs{CVaR}$_{25}$ $16.67\\%$ versus $12.16\\%$"
+  },
+  {
+   "key": "sec5.mech_median_relu",
+   "published": "2.22",
+   "context": "Median relative prediction errors are $2.22\\%$ for \\ac{ReLU}"
+  },
+  {
+   "key": "sec5.mech_median_gelu",
+   "published": "0.80",
+   "context": "and $0.80\\%$ for \\ac{GELU}"
+  },
+  {
+   "key": "sec5.mech_bound_checks",
+   "published": "992",
+   "context": "holds in all 992 eligible coordinate checks"
+  },
+  {
+   "key": "sec5.mech_module_checks",
+   "published": "144",
+   "context": "All 144 \\ac{ReLU} module checks"
+  },
+  {
+   "key": "sec5.main_mean_E",
+   "published": "3.68",
+   "context": "mean range regret falling from $3.68\\%$ to $2.69\\%$"
+  },
+  {
+   "key": "sec5.main_mean_G",
+   "published": "2.69",
+   "context": "mean range regret falling from $3.68\\%$ to $2.69\\%$"
+  },
+  {
+   "key": "sec5.main_mean_reduction",
+   "published": "26.90",
+   "context": "a $26.90\\%$ relative improvement"
+  },
+  {
+   "key": "sec5.main_cvar25_reduction",
+   "published": "26.93",
+   "context": "($26.93\\%$ relative)"
+  },
+  {
+   "key": "sec5.main_cvar5_reduction",
+   "published": "24.11",
+   "context": "($24.11\\%$ relative)"
+  },
+  {
+   "key": "sec5.changed_sets",
+   "published": "179",
+   "context": "The primary correction changes 179 retained sets"
+  },
+  {
+   "key": "sec5.improved_cells",
+   "published": "32",
+   "context": "regret improves in 32 cells, worsens in 24, and ties in 312"
+  },
+  {
+   "key": "sec5.worsened_cells",
+   "published": "24",
+   "context": "regret improves in 32 cells, worsens in 24, and ties in 312"
+  },
+  {
+   "key": "sec5.tied_cells",
+   "published": "312",
+   "context": "regret improves in 32 cells, worsens in 24, and ties in 312"
+  },
+  {
+   "key": "sec5.max_regret",
+   "published": "69.30",
+   "context": "Both primary and reference selectors have largest regret $69.30\\%$"
+  },
+  {
+   "key": "sec5.spearman_E",
+   "published": "0.70",
+   "context": "Evaluation has Spearman and Kendall correlations $0.70$ and $0.56$"
+  },
+  {
+   "key": "sec5.kendall_E",
+   "published": "0.56",
+   "context": "Evaluation has Spearman and Kendall correlations $0.70$ and $0.56$"
+  },
+  {
+   "key": "sec5.spearman_G",
+   "published": "0.66",
+   "context": "versus $0.66$ and $0.52$ with $G$"
+  },
+  {
+   "key": "sec5.kendall_G",
+   "published": "0.52",
+   "context": "versus $0.66$ and $0.52$ with $G$"
+  },
+  {
+   "key": "sec5.top_two_share",
+   "published": "72",
+   "context": "contribute 72\\% of the summed per-task gain"
+  },
+  {
+   "key": "sec5.rest_gain",
+   "published": "0.30",
+   "context": "over the other 21 tasks the mean gain is $0.30$ percentage points"
+  },
+  {
+   "key": "sec5.rest_improved",
+   "published": "9",
+   "context": "with nine gains, ten losses and two ties"
+  },
+  {
+   "key": "sec5.rest_worsened",
+   "published": "10",
+   "context": "with nine gains, ten losses and two ties"
+  },
+  {
+   "key": "sec5.rest_tied",
+   "published": "2",
+   "context": "with nine gains, ten losses and two ties"
+  },
+  {
+   "key": "sec5.vit_gap_below",
+   "published": "0.01",
+   "context": "with a difference below $0.01$ percentage points favoring Evaluation"
+  },
+  {
+   "key": "sec5.cnn_with_pool",
+   "published": "1.00",
+   "context": "\\acs{CNN} mean regret rises from $1.00\\%$ to $1.65\\%$"
+  },
+  {
+   "key": "sec5.cnn_without_pool",
+   "published": "1.65",
+   "context": "\\acs{CNN} mean regret rises from $1.00\\%$ to $1.65\\%$"
+  },
+  {
+   "key": "sec5.k1_E",
+   "published": "8.50",
+   "context": "At $K=1$, mean regret falls from $8.50\\%$ to $6.01\\%$"
+  },
+  {
+   "key": "sec5.k1_G",
+   "published": "6.01",
+   "context": "At $K=1$, mean regret falls from $8.50\\%$ to $6.01\\%$"
+  },
+  {
+   "key": "sec5.k3_E",
+   "published": "4.42",
+   "context": "at $K=3$, from $4.42\\%$ to $3.03\\%$"
+  },
+  {
+   "key": "sec5.k3_G",
+   "published": "3.03",
+   "context": "at $K=3$, from $4.42\\%$ to $3.03\\%$"
+  },
+  {
+   "key": "sec5.tau20_E",
+   "published": "2.40",
+   "context": "at 20\\%, means are $2.40\\%$ and $1.60\\%$"
+  },
+  {
+   "key": "sec5.tau20_G",
+   "published": "1.60",
+   "context": "at 20\\%, means are $2.40\\%$ and $1.60\\%$"
+  },
+  {
+   "key": "sec5.k10_E",
+   "published": "0.51",
+   "context": "with means $0.51\\%$ and $0.52\\%$"
+  },
+  {
+   "key": "sec5.k10_G",
+   "published": "0.52",
+   "context": "with means $0.51\\%$ and $0.52\\%$"
+  },
+  {
+   "key": "sec5.matched_sparsity",
+   "published": "3.68",
+   "context": "The optimized sparsity coefficient is $3/4$, giving mean $3.68\\%$ versus $3.10\\%$"
+  },
+  {
+   "key": "sec5.matched_G17",
+   "published": "3.10",
+   "context": "The optimized sparsity coefficient is $3/4$, giving mean $3.68\\%$ versus $3.10\\%$"
+  },
+  {
+   "key": "sec5.matched_trainloss",
+   "published": "3.81",
+   "context": "Training loss selects $1/3$ and gives $3.81\\%$ there"
+  },
+  {
+   "key": "sec5.matched_effrank",
+   "published": "4.51",
+   "context": "Effective rank selects zero, giving $4.51\\%$ versus $3.79\\%$"
+  },
+  {
+   "key": "sec5.matched_G11",
+   "published": "3.79",
+   "context": "Effective rank selects zero, giving $4.51\\%$ versus $3.79\\%$"
+  },
+  {
+   "key": "sec5.hb_streams",
+   "published": "200",
+   "context": "Hyperband uses 200 paired streams"
+  },
+  {
+   "key": "sec5.asha_arrivals",
+   "published": "100",
+   "context": "\\acs{ASHA} uses 100 paired arrivals"
+  },
+  {
+   "key": "sec5.bohb_G",
+   "published": "2.03",
+   "context": "Its \\acs{BOHB}-style mean is $2.03\\%$ versus $2.50\\%$"
+  },
+  {
+   "key": "sec5.bohb_E",
+   "published": "2.50",
+   "context": "Its \\acs{BOHB}-style mean is $2.03\\%$ versus $2.50\\%$"
+  },
+  {
+   "key": "sec5.asha4_G",
+   "published": "3.98",
+   "context": "Its \\acs{ASHA} means are $3.98\\%$, $3.90\\%$ and $3.87\\%$"
+  },
+  {
+   "key": "sec5.asha8_G",
+   "published": "3.90",
+   "context": "Its \\acs{ASHA} means are $3.98\\%$, $3.90\\%$ and $3.87\\%$"
+  },
+  {
+   "key": "sec5.asha12_G",
+   "published": "3.87",
+   "context": "Its \\acs{ASHA} means are $3.98\\%$, $3.90\\%$ and $3.87\\%$"
+  },
+  {
+   "key": "sec5.asha4_E",
+   "published": "4.06",
+   "context": "versus $4.06\\%$, $3.99\\%$ and $4.18\\%$"
+  },
+  {
+   "key": "sec5.asha8_E",
+   "published": "3.99",
+   "context": "versus $4.06\\%$, $3.99\\%$ and $4.18\\%$"
+  },
+  {
+   "key": "sec5.asha12_E",
+   "published": "4.18",
+   "context": "versus $4.06\\%$, $3.99\\%$ and $4.18\\%$"
+  },
+  {
+   "key": "sec5.hb_G",
+   "published": "2.16",
+   "context": "In Hyperband, $G$ has mean $2.16\\%$ versus $2.03\\%$"
+  },
+  {
+   "key": "sec5.hb_E",
+   "published": "2.03",
+   "context": "In Hyperband, $G$ has mean $2.16\\%$ versus $2.03\\%$"
+  },
+  {
+   "key": "sec5.bohb_extrap",
+   "published": "2.16",
+   "context": "versus $2.16\\%$ for Evaluation plus half-weight extrapolation"
+  },
+  {
+   "key": "sec5.bootstrap_draws",
+   "published": "50,000",
+   "context": "The paired cluster bootstrap uses 50,000 draws (seed 20260926)"
+  },
+  {
+   "key": "sec5.mean_gain",
+   "published": "0.99",
+   "context": "Mean gain is $0.99$ percentage points"
+  },
+  {
+   "key": "sec5.pct_abs_low",
+   "published": "0.17",
+   "context": "The 95\\% percentile intervals are $[0.17,2.06]$"
+  },
+  {
+   "key": "sec5.pct_abs_high",
+   "published": "2.06",
+   "context": "The 95\\% percentile intervals are $[0.17,2.06]$"
+  },
+  {
+   "key": "sec5.pct_rel_low",
+   "published": "6.52",
+   "context": "$[6.52,47.84]\\%$ relative gain"
+  },
+  {
+   "key": "sec5.pct_rel_high",
+   "published": "47.84",
+   "context": "$[6.52,47.84]\\%$ relative gain"
+  },
+  {
+   "key": "sec5.tasks_improved",
+   "published": "11",
+   "context": "$G$ lowers mean regret in 11 experiments"
+  },
+  {
+   "key": "sec5.tasks_worsened",
+   "published": "10",
+   "context": "raises it in 10 (three of them"
+  },
+  {
+   "key": "sec5.tasks_worsened_tiny",
+   "published": "3",
+   "context": "raises it in 10 (three of them by less than $0.01$ percentage points)"
+  },
+  {
+   "key": "sec5.tasks_tied",
+   "published": "2",
+   "context": "and ties in 2"
+  },
+  {
+   "key": "sec5.sign_test",
+   "published": "1.00",
+   "context": "A sign test therefore gives $p=1.00$"
+  },
+  {
+   "key": "sec5.wilcoxon",
+   "published": "0.12",
+   "context": "the Wilcoxon signed-rank test $p=0.12$"
+  },
+  {
+   "key": "sec5.sign_flip",
+   "published": "0.02",
+   "context": "the paired sign-flip test on mean gains $p=0.02$"
+  },
+  {
+   "key": "sec5.loo_abs_low",
+   "published": "0.65",
+   "context": "positive mean gain: $0.65$--$1.07$ percentage points"
+  },
+  {
+   "key": "sec5.loo_abs_high",
+   "published": "1.07",
+   "context": "positive mean gain: $0.65$--$1.07$ percentage points"
+  },
+  {
+   "key": "sec5.loo_rel_low",
+   "published": "19.45",
+   "context": "or $19.45$--$35.92\\%$ relative"
+  },
+  {
+   "key": "sec5.loo_rel_high",
+   "published": "35.92",
+   "context": "or $19.45$--$35.92\\%$ relative"
+  },
+  {
+   "key": "sec5.heldout_G",
+   "published": "3.01",
+   "context": "gives mean regret $3.01\\%$ versus $3.68\\%$ for Evaluation"
+  },
+  {
+   "key": "sec5.heldout_E",
+   "published": "3.68",
+   "context": "gives mean regret $3.01\\%$ versus $3.68\\%$ for Evaluation"
+  },
+  {
+   "key": "sec5.heldout_cvar_G",
+   "published": "11.66",
+   "context": "and \\acs{CVaR}$_{25}$ $11.66\\%$ versus $14.24\\%$"
+  },
+  {
+   "key": "sec5.heldout_cvar_E",
+   "published": "14.24",
+   "context": "and \\acs{CVaR}$_{25}$ $11.66\\%$ versus $14.24\\%$"
+  },
+  {
+   "key": "sec5.family_G",
+   "published": "3.48",
+   "context": "Holding out whole families gives mean regret $3.48\\%$"
+  },
+  {
+   "key": "sec5.family_worst_G",
+   "published": "89.21",
+   "context": "a larger worst case, $89.21\\%$ versus $69.30\\%$"
+  },
+  {
+   "key": "sec5.family_worst_E",
+   "published": "69.30",
+   "context": "a larger worst case, $89.21\\%$ versus $69.30\\%$"
+  },
+  {
+   "key": "sec5.last_E",
+   "published": "6.88",
+   "context": "Mean regret falls from $6.88\\%$ to $5.92\\%$ using the last checkpoint"
+  },
+  {
+   "key": "sec5.last_G",
+   "published": "5.92",
+   "context": "Mean regret falls from $6.88\\%$ to $5.92\\%$ using the last checkpoint"
+  },
+  {
+   "key": "sec5.final_E",
+   "published": "6.87",
+   "context": "and from $6.87\\%$ to $5.92\\%$ using the final checkpoint"
+  },
+  {
+   "key": "sec5.final_G",
+   "published": "5.92",
+   "context": "and from $6.87\\%$ to $5.92\\%$ using the final checkpoint"
+  },
+  {
+   "key": "sec6.later_prefix",
+   "published": "30",
+   "context": "from 30\\% of training onward, Evaluation alone has lower mean regret"
+  },
+  {
+   "key": "appB.eps_profiles",
+   "published": "4,344",
+   "context": "Among 4,344 eligible run--prefix profiles"
+  },
+  {
+   "key": "appB.eps_zero_layers",
+   "published": "1,059",
+   "context": "1,059 layer entries are exactly zero"
+  },
+  {
+   "key": "appB.eps_all_zero",
+   "published": "11",
+   "context": "and 11 profiles are all zero"
+  },
+  {
+   "key": "appB.eps_range_low",
+   "published": "2.68",
+   "context": "give mean regrets between $2.68\\%$ and $2.72\\%$"
+  },
+  {
+   "key": "appB.eps_range_high",
+   "published": "2.72",
+   "context": "give mean regrets between $2.68\\%$ and $2.72\\%$"
+  },
+  {
+   "key": "appB.eps_zero",
+   "published": "2.75",
+   "context": "giving mean regret $2.75\\%$ versus $2.69\\%$"
+  },
+  {
+   "key": "appB.eps_default",
+   "published": "2.69",
+   "context": "giving mean regret $2.75\\%$ versus $2.69\\%$"
+  },
+  {
+   "key": "appC.language_configs",
+   "published": "288",
+   "context": "confirmed in all 288 resolved language configurations"
+  },
+  {
+   "key": "appC.lcpfn_rows",
+   "published": "1,448",
+   "context": "Among 1,448 eligible configuration--prefix rows"
+  },
+  {
+   "key": "appC.lcpfn_fallback",
+   "published": "45",
+   "context": "45 contain at least one fallback seed"
+  },
+  {
+   "key": "appC.asha_runs",
+   "published": "1,104",
+   "context": "\\acs{ASHA} retains all 1,104 runs"
+  },
+  {
+   "key": "appD.mech_p90_relu",
+   "published": "14.51",
+   "context": "the 90th-percentile relative discrepancies are $14.51\\%$"
+  },
+  {
+   "key": "appD.mech_p90_gelu",
+   "published": "5.28",
+   "context": "and $5.28\\%$ for \\ac{GELU}"
+  },
+  {
+   "key": "appD.mech_gate_relu",
+   "published": "0.77",
+   "context": "a median of $0.77\\%$ and $1.29\\%$ of the threshold states"
+  },
+  {
+   "key": "appD.mech_gate_gelu",
+   "published": "1.29",
+   "context": "a median of $0.77\\%$ and $1.29\\%$ of the threshold states"
+  },
+  {
+   "key": "appD.mech_checks",
+   "published": "992",
+   "context": "all 992 eligible checks satisfy it"
+  },
+  {
+   "key": "appE.weights_best",
+   "published": "2.69",
+   "context": "It attains the smallest mean, $2.69\\%$"
+  },
+  {
+   "key": "appE.agg_AM",
+   "published": "3.28",
+   "context": "their mean regrets are $3.28\\%$ and $2.69\\%$"
+  },
+  {
+   "key": "appE.agg_GM",
+   "published": "2.69",
+   "context": "their mean regrets are $3.28\\%$ and $2.69\\%$"
+  },
+  {
+   "key": "appE.agg_LUD",
+   "published": "2.83",
+   "context": "reaches $2.83\\%$"
+  },
+  {
+   "key": "appE.family_G",
+   "published": "3.48",
+   "context": "Cross-family selection gives mean $3.48\\%$ for $G$ versus $3.74\\%$ for extrapolation"
+  },
+  {
+   "key": "appE.family_extrap",
+   "published": "3.74",
+   "context": "Cross-family selection gives mean $3.48\\%$ for $G$ versus $3.74\\%$ for extrapolation"
+  },
+  {
+   "key": "appE.median_E",
+   "published": "3.84",
+   "context": "mean regret is $3.84\\%$ versus $2.88\\%$ for the median"
+  },
+  {
+   "key": "appE.median_G",
+   "published": "2.88",
+   "context": "mean regret is $3.84\\%$ versus $2.88\\%$ for the median"
+  },
+  {
+   "key": "appE.worst_seed_E",
+   "published": "4.50",
+   "context": "and $4.50\\%$ versus $3.61\\%$ for the worst seed"
+  },
+  {
+   "key": "appE.worst_seed_G",
+   "published": "3.61",
+   "context": "and $4.50\\%$ versus $3.61\\%$ for the worst seed"
+  },
+  {
+   "key": "appE.worst_seed_max_G",
+   "published": "77.78",
+   "context": "the largest regret is $77.78\\%$ for $G$ versus $72.96\\%$"
+  },
+  {
+   "key": "appE.worst_seed_max_E",
+   "published": "72.96",
+   "context": "the largest regret is $77.78\\%$ for $G$ versus $72.96\\%$"
+  },
+  {
+   "key": "appE.incumbent_E",
+   "published": "3.60",
+   "context": "Mean regret is $3.60\\%$ for Evaluation and $2.69\\%$ for $G$"
+  },
+  {
+   "key": "appE.incumbent_G",
+   "published": "2.69",
+   "context": "Mean regret is $3.60\\%$ for Evaluation and $2.69\\%$ for $G$"
+  },
+  {
+   "key": "appE.lcpfn_best",
+   "published": "7.73",
+   "context": "reaches mean regret $7.73\\%$ under the main best-within-budget oracle"
+  },
+  {
+   "key": "appE.lcpfn_last",
+   "published": "11.70",
+   "context": "gives means $11.70\\%$ for \\acs{LC-PFN} and $5.92\\%$ for $G$"
+  },
+  {
+   "key": "appE.lcpfn_last_G",
+   "published": "5.92",
+   "context": "gives means $11.70\\%$ for \\acs{LC-PFN} and $5.92\\%$ for $G$"
+  },
+  {
+   "key": "appE.top_two_share",
+   "published": "72.00",
+   "context": "contribute $72.00\\%$ of the net gain"
+  },
+  {
+   "key": "appE.rest_gain",
+   "published": "0.30",
+   "context": "leaves mean gain $0.30$ percentage points"
+  },
+  {
+   "key": "appE.rest_relative",
+   "published": "11.63",
+   "context": "or $11.63\\%$ relative to Evaluation on the other 21 experiments"
+  },
+  {
+   "key": "appE.sign_flip_assignments",
+   "published": "100,000",
+   "context": "The paired sign-flip test (100,000 assignments)"
+  },
+  {
+   "key": "theory.ten_input_utilization",
+   "published": "0.4",
+   "context": "giving utilization $2(2/10)=0.4$"
+  },
+  {
+   "key": "theory.ten_input_mismatch",
+   "published": "0.2",
+   "context": "The better constant choice therefore has mismatch rate $0.2$"
+  },
+  {
+   "key": "theory.G0_005_005",
+   "published": "0.05",
+   "context": "therefore give $0.05$, $0.30$ and $0.50$"
+  },
+  {
+   "key": "theory.G0_01_09",
+   "published": "0.30",
+   "context": "therefore give $0.05$, $0.30$ and $0.50$"
+  },
+  {
+   "key": "theory.G0_05_05",
+   "published": "0.50",
+   "context": "therefore give $0.05$, $0.30$ and $0.50$"
+  },
+  {
+   "key": "theory.relu_output_before",
+   "published": "6",
+   "context": "changes its output from $6$ to $6.3$"
+  },
+  {
+   "key": "theory.relu_output_after",
+   "published": "6.3",
+   "context": "changes its output from $6$ to $6.3$"
+  },
+  {
+   "key": "theory.four_input_coefficient",
+   "published": "0.2",
+   "context": "the linearized correction $0.2\\phi_1$ equals $r$"
+  },
+  {
+   "key": "theory.selected_threshold_U08",
+   "published": "0.4",
+   "context": "at least two thirds of the units have utilization at least $0.4$"
+  },
+  {
+   "key": "theory.rank_threshold_U",
+   "published": "0.22",
+   "context": "violates it once $U$ exceeds about $0.22$"
+  },
+  {
+   "key": "theory.B5_recorded",
+   "published": "1",
+   "context": "so the recorded utilization is $2/2=1$"
+  },
+  {
+   "key": "theory.B5_plugin",
+   "published": "0.8",
+   "context": "gives $2(2/5)=0.8$"
+  },
+  {
+   "key": "theory.probe_forwards",
+   "published": "8",
+   "context": "2,048 inputs in batches of 256 require eight"
+  },
+  {
+   "key": "theory.regret_example",
+   "published": "10",
+   "context": "reported as $10\\%$"
+  },
+  {
+   "key": "theory.relative_reduction_example",
+   "published": "25",
+   "context": "and a $25\\%$ relative reduction in regret"
+  },
+  {
+   "key": "theory.B3_population",
+   "published": "0.5",
+   "context": "population utilization is $0.5$"
+  },
+  {
+   "key": "theory.B3_expected_plugin",
+   "published": "0.375",
+   "context": "expected plug-in utilization is $0.375$"
+  },
+  {
+   "key": "theory.B3_expected_recorded",
+   "published": "0.5625",
+   "context": "expected recorded utilization is $0.5625$"
+  },
+  {
+   "key": "theory.seedwise_G",
+   "published": "0.3",
+   "context": "Each network has $G_0=0.3$"
+  },
+  {
+   "key": "theory.averaged_profile_G",
+   "published": "0.5",
+   "context": "gives $(0.5,0.5)$ and $G_0=0.5$"
+  },
+  {
+   "key": "theory.floor_fraction",
+   "published": "9.7",
+   "context": "at most about $9.7\\%$ of modules"
+  }
+ ]
+}

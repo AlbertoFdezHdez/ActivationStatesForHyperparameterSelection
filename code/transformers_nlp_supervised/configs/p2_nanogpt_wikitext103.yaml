@@ -1,0 +1,72 @@
+﻿experiment_id: p2_nanogpt_wikitext103
+runner: pretraining
+task_type: causal_lm
+model:
+  family: gpt2
+  init: scratch
+  tokenizer:
+    name: gpt2
+  config:
+    n_positions: 512
+    n_ctx: 512
+    n_embd: 384
+    n_layer: 6
+    n_head: 6
+    resid_pdrop: 0.2
+    embd_pdrop: 0.2
+    attn_pdrop: 0.2
+dataset:
+  name: Salesforce/wikitext
+  config: wikitext-103-raw-v1
+  train_split: train
+  validation_split: validation
+  text_columns: [text]
+  streaming: false
+training:
+  betas: [0.95, 0.95]
+  learning_rates: [1.0e-4, 3.0e-4, 1.0e-3, 3.0e-3]
+  weight_decays: [0.0, 1.0e-2, 3.0e-2, 1.0e-1]
+  seeds: [0, 1, 2]
+  max_steps: 30000
+  batch_size: 8
+  gradient_accumulation_steps: 8
+  sequence_length: 512
+  scheduler: cosine
+  warmup_ratio: 0.03
+  min_lr_ratio: 0.01
+  gradient_clip: 1.0
+  precision: auto
+  log_every: 30
+validation:
+  eval_every: 1500
+  batch_size: 8
+oui:
+  hook_patterns: [c_fc]
+  sequence_mode: last_token
+  measure_every: 30
+  probe_size: 8
+  probe_batch_size: 8
+  max_token_samples: 256
+  save_probe_batches: false
+output:
+  results_root: ../../descargas/transformers_nlp_supervised/results
+  save_final_checkpoint: false
+smoke:
+  output:
+    save_final_checkpoint: false
+  training:
+    max_steps: 120
+    batch_size: 2
+    gradient_accumulation_steps: 1
+    sequence_length: 128
+    log_every: 30
+  validation:
+    eval_every: 1500
+    batch_size: 2
+    max_batches: 1
+  oui:
+    measure_every: 30
+    probe_size: 2
+    probe_batch_size: 2
+    max_token_samples: 128
+

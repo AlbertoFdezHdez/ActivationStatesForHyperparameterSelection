@@ -1,0 +1,17 @@
+# Packages imported by the family training programs in code/ (not needed by reproduce.py).
+# Install torch/torchvision builds that match your accelerator. This is a dependency
+# inventory of the executed programs, not a lockfile of the original cluster environment.
+numpy
+scipy
+PyYAML
+torch
+torchvision
+timm
+datasets
+transformers
+sentencepiece
+scikit-learn
+gymnasium[box2d,mujoco]
+stable-baselines3
+minigrid
+minatar

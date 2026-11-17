@@ -1,0 +1,64 @@
+﻿experiment_id: f3_pythia_pubmed
+runner: pretraining
+task_type: causal_lm
+model:
+  family: pythia
+  init: pretrained
+  name: EleutherAI/pythia-160m
+  tokenizer:
+    name: EleutherAI/pythia-160m
+dataset:
+  name: ccdv/pubmed-summarization
+  config: document
+  train_split: train
+  validation_split: validation
+  text_columns: [abstract]
+  streaming: false
+training:
+  betas: [0.95, 0.95]
+  learning_rates: [1.0e-5, 4.0e-5, 1.5e-4, 5.0e-4]
+  weight_decays: [0.0, 1.0e-2, 5.0e-2, 3.0e-1]
+  seeds: [0, 1, 2]
+  max_steps: 20000
+  batch_size: 4
+  gradient_accumulation_steps: 16
+  sequence_length: 512
+  scheduler: cosine
+  warmup_ratio: 0.03
+  min_lr_ratio: 0.1
+  gradient_clip: 1.0
+  precision: auto
+  log_every: 20
+validation:
+  eval_every: 1000
+  batch_size: 4
+oui:
+  hook_patterns: [dense_h_to_4h]
+  sequence_mode: last_token
+  measure_every: 20
+  probe_size: 4
+  probe_batch_size: 4
+  max_token_samples: 256
+  save_probe_batches: false
+output:
+  results_root: ../../descargas/transformers_nlp_supervised/results
+  save_final_checkpoint: false
+smoke:
+  output:
+    save_final_checkpoint: false
+  training:
+    max_steps: 120
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    sequence_length: 128
+    log_every: 20
+  validation:
+    eval_every: 1000
+    batch_size: 1
+    max_batches: 1
+  oui:
+    measure_every: 20
+    probe_size: 1
+    probe_batch_size: 1
+    max_token_samples: 128
+

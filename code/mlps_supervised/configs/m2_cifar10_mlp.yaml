@@ -1,0 +1,32 @@
+﻿experiment_id: m2_cifar10_mlp
+runner: mlps
+model:
+  input_dim: 3072
+  hidden_dims: [2048, 1024, 512]
+  dropouts: [0.2, 0.2, 0.1]
+data:
+  name: cifar10
+  data_dir: null
+  download: true
+  num_classes: 10
+  val_fraction: 0.1
+training:
+  epochs: 120
+  effective_batch_size: 256
+  per_device_batch_size: 128
+  learning_rates: [3e-5, 1e-4, 3e-4, 1e-3]
+  weight_decays: [0.0, 1e-5, 1e-4, 1e-3]
+  seeds: [0, 1, 2]
+  num_workers: 2
+smoke:
+  training:
+    epochs: 1
+    max_steps: 30
+    effective_batch_size: 128
+    per_device_batch_size: 64
+    num_workers: 0
+  data:
+    smoke_train_examples: 512
+    smoke_val_examples: 256
+  tracking:
+    validation_max_batches: 2

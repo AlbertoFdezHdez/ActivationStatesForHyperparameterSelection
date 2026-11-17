@@ -1,0 +1,38 @@
+experiment_id: r4_dqn_minatar_seaquest
+algorithm: DQN
+env:
+  id: MinAtar-Seaquest
+  kind: minatar
+  game: seaquest
+  n_envs: 1
+  max_episode_steps: 5000
+policy: {}
+training:
+  total_timesteps: 1000000
+hyperparams:
+  buffer_size: 100000
+  learning_starts: 5000
+  batch_size: 32
+  gamma: 0.99
+  train_freq: 4
+  gradient_steps: 1
+  target_update_interval: 1000
+  exploration_fraction: 0.10
+  exploration_final_eps: 0.01
+  max_grad_norm: 10.0
+tracking:
+  probe_states: 2048
+  eval_episodes: 10
+oui_patterns: []
+smoke:
+  env:
+    max_episode_steps: 1000
+  training:
+    total_timesteps: 5000
+  hyperparams:
+    learning_starts: 100
+    buffer_size: 10000
+    target_update_interval: 500
+  tracking:
+    probe_states: 256
+    eval_episodes: 2

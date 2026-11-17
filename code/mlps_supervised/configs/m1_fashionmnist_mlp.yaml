@@ -1,0 +1,32 @@
+﻿experiment_id: m1_fashionmnist_mlp
+runner: mlps
+model:
+  input_dim: 784
+  hidden_dims: [512, 256]
+  dropouts: [0.1, 0.1]
+data:
+  name: fashion_mnist
+  data_dir: null
+  download: true
+  num_classes: 10
+  val_fraction: 0.1
+training:
+  epochs: 80
+  effective_batch_size: 256
+  per_device_batch_size: 128
+  learning_rates: [1e-4, 3e-4, 1e-3, 3e-3]
+  weight_decays: [0.0, 1e-5, 1e-4, 1e-3]
+  seeds: [0, 1, 2]
+  num_workers: 2
+smoke:
+  training:
+    epochs: 1
+    max_steps: 30
+    effective_batch_size: 128
+    per_device_batch_size: 64
+    num_workers: 0
+  data:
+    smoke_train_examples: 512
+    smoke_val_examples: 256
+  tracking:
+    validation_max_batches: 2

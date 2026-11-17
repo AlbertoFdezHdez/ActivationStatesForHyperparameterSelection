@@ -1,0 +1,174 @@
+{
+ "source": {
+  "file": "main.tex (Overleaf project export, 2026-11-17)",
+  "sha256": "07635170a3ed0eec41866f9741e5706dbaa14cf7b5fce93b1bc8e022f3af9331"
+ },
+ "fig2_task_gains": [
+  "0.352",
+  "0.197",
+  "-0.024",
+  "-0.200",
+  "0.000",
+  "8.367",
+  "-0.002",
+  "-0.798",
+  "2.089",
+  "-0.380",
+  "0.285",
+  "-0.008",
+  "-0.426",
+  "8.005",
+  "1.028",
+  "0.000",
+  "0.921",
+  "1.541",
+  "1.887",
+  "-0.084",
+  "-0.069",
+  "0.059",
+  "-0.002"
+ ],
+ "fig2_family_marks": [
+  "0.08",
+  "1.89",
+  "1.59",
+  "0.88",
+  "-0.004"
+ ],
+ "fig2_family_means": [
+  [
+   "1.08",
+   "1.00"
+  ],
+  [
+   "10.94",
+   "9.05"
+  ],
+  [
+   "3.42",
+   "1.82"
+  ],
+  [
+   "2.41",
+   "1.52"
+  ],
+  [
+   "0.50",
+   "0.51"
+  ]
+ ],
+ "fig3_cells": [
+  {
+   "colour": "blue",
+   "intensity": 82.0,
+   "k_index": 0,
+   "tau_index": 0,
+   "label": "+3.61"
+  },
+  {
+   "colour": "blue",
+   "intensity": 51.47523,
+   "k_index": 1,
+   "tau_index": 0,
+   "label": "+2.14"
+  },
+  {
+   "colour": "blue",
+   "intensity": 7.041044,
+   "k_index": 2,
+   "tau_index": 0,
+   "label": "0.00"
+  },
+  {
+   "colour": "warm",
+   "intensity": 7.029723,
+   "k_index": 3,
+   "tau_index": 0,
+   "label": "0.00"
+  },
+  {
+   "colour": "warm",
+   "intensity": 9.950693,
+   "k_index": 0,
+   "tau_index": 1,
+   "label": "-0.14"
+  },
+  {
+   "colour": "blue",
+   "intensity": 74.003036,
+   "k_index": 1,
+   "tau_index": 1,
+   "label": "+3.22"
+  },
+  {
+   "colour": "blue",
+   "intensity": 15.491759,
+   "k_index": 2,
+   "tau_index": 1,
+   "label": "+0.41"
+  },
+  {
+   "colour": "blue",
+   "intensity": 7.0,
+   "k_index": 3,
+   "tau_index": 1,
+   "label": "0.00"
+  },
+  {
+   "colour": "blue",
+   "intensity": 81.508151,
+   "k_index": 0,
+   "tau_index": 2,
+   "label": "+3.58"
+  },
+  {
+   "colour": "warm",
+   "intensity": 9.125519,
+   "k_index": 1,
+   "tau_index": 2,
+   "label": "-0.10"
+  },
+  {
+   "colour": "warm",
+   "intensity": 8.345695,
+   "k_index": 2,
+   "tau_index": 2,
+   "label": "-0.06"
+  },
+  {
+   "colour": "warm",
+   "intensity": 7.844626,
+   "k_index": 3,
+   "tau_index": 2,
+   "label": "-0.04"
+  },
+  {
+   "colour": "blue",
+   "intensity": 67.30648,
+   "k_index": 0,
+   "tau_index": 3,
+   "label": "+2.90"
+  },
+  {
+   "colour": "blue",
+   "intensity": 13.246444,
+   "k_index": 1,
+   "tau_index": 3,
+   "label": "+0.30"
+  },
+  {
+   "colour": "blue",
+   "intensity": 7.305104,
+   "k_index": 2,
+   "tau_index": 3,
+   "label": "+0.01"
+  },
+  {
+   "colour": "blue",
+   "intensity": 7.0,
+   "k_index": 3,
+   "tau_index": 3,
+   "label": "0.00"
+  }
+ ]
+}

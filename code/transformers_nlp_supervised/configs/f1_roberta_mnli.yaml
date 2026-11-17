@@ -1,0 +1,61 @@
+﻿experiment_id: f1_roberta_mnli
+runner: finetuning
+task_type: sequence_classification
+model:
+  name: roberta-base
+  num_labels: 3
+dataset:
+  name: glue
+  config: mnli
+  train_split: train
+  validation_split: validation_matched
+  validation_mismatched_split: validation_mismatched
+  input_columns: [premise, hypothesis]
+  label_column: label
+training:
+  betas: [0.95, 0.95]
+  learning_rates: [5.0e-6, 1.0e-5, 3.0e-5, 1.0e-4]
+  weight_decays: [0.0, 1.0e-2, 5.0e-2, 3.0e-1]
+  seeds: [0, 1, 2]
+  max_steps: 20000
+  epochs: 3
+  batch_size: 16
+  gradient_accumulation_steps: 2
+  max_sequence_length: 128
+  scheduler: linear
+  warmup_ratio: 0.06
+  gradient_clip: 1.0
+  precision: auto
+  log_every: 20
+validation:
+  eval_every: 1000
+  batch_size: 32
+oui:
+  hook_patterns: [intermediate.dense]
+  sequence_mode: cls
+  measure_every: 20
+  probe_size: 16
+  probe_batch_size: 16
+  max_token_samples: 256
+  save_probe_batches: false
+output:
+  results_root: ../../descargas/transformers_nlp_supervised/results
+  save_final_checkpoint: false
+smoke:
+  output:
+    save_final_checkpoint: false
+  training:
+    max_steps: 120
+    batch_size: 2
+    gradient_accumulation_steps: 1
+    log_every: 20
+  validation:
+    eval_every: 1000
+    batch_size: 2
+    max_batches: 1
+  oui:
+    measure_every: 20
+    probe_size: 2
+    probe_batch_size: 2
+    max_token_samples: 128
+

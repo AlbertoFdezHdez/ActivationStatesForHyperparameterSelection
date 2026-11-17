@@ -1,0 +1,4 @@
+{
+ "note": "Values printed in the manuscript that the supplied data do not reproduce at the printed precision. Each entry is reported by reproduce.py instead of failing it; remove an entry once the manuscript is corrected.",
+ "errata": []
+}

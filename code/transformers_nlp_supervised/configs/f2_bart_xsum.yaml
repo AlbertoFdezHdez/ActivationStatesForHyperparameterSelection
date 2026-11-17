@@ -1,0 +1,63 @@
+﻿experiment_id: f2_bart_xsum
+runner: finetuning
+task_type: seq2seq_summarization
+model:
+  name: facebook/bart-base
+dataset:
+  name: EdinburghNLP/xsum
+  config:
+  train_split: train
+  validation_split: validation
+  source_column: document
+  target_column: summary
+training:
+  betas: [0.95, 0.95]
+  learning_rates: [5.0e-6, 1.0e-5, 3.0e-5, 1.0e-4]
+  weight_decays: [0.0, 1.0e-2, 5.0e-2, 3.0e-1]
+  seeds: [0, 1, 2]
+  max_steps: 20000
+  epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 8
+  max_source_length: 512
+  max_target_length: 64
+  scheduler: linear
+  warmup_ratio: 0.06
+  gradient_clip: 1.0
+  precision: auto
+  log_every: 20
+validation:
+  eval_every: 1000
+  batch_size: 4
+  compute_rouge: false
+oui:
+  hook_patterns: [fc1]
+  sequence_mode: none
+  measure_every: 20
+  probe_size: 4
+  probe_batch_size: 4
+  max_token_samples: 256
+  save_probe_batches: false
+output:
+  results_root: ../../descargas/transformers_nlp_supervised/results
+  save_final_checkpoint: false
+smoke:
+  output:
+    save_final_checkpoint: false
+  training:
+    max_steps: 120
+    batch_size: 1
+    gradient_accumulation_steps: 1
+    max_source_length: 128
+    max_target_length: 64
+    log_every: 20
+  validation:
+    eval_every: 1000
+    batch_size: 1
+    max_batches: 1
+  oui:
+    measure_every: 20
+    probe_size: 1
+    probe_batch_size: 1
+    max_token_samples: 128
+
