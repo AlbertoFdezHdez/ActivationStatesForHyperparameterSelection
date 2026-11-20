@@ -6,6 +6,8 @@ from .common import (EPSILON, GRID, KS, PRIMARY_WEIGHT, SWEEP, PROBE_TASKS, TEST
                      ALL_TAUS, order, rank, regret, summarize, stats, profile_G)
 from . import data
 
+C1_C2 = {'cnn:c1_resnet34_imagenet100', 'cnn:c2_densenet121_tinyimagenet'}
+
 # Auxiliary diagnostics: column and orientation (smaller oriented value ranks better).
 DIAGNOSTICS = {
     'G': ('G', -1), 'Arithmetic mean': ('M', -1), 'Log AM/GM': ('LUD', 1),
@@ -198,6 +200,9 @@ def run():
     # Text: restriction to the 19 tasks with their own validation data.
     q = p[~p.experiment_id.isin(TEST_SPLIT_TASKS)]
     out['own_validation'] = dict(tasks=q.experiment_id.nunique(), E=stats(q.E), G=stats(q.G))
+    # Text: further restriction that also leaves out C1 and C2 (17 tasks).
+    q = q[~q.experiment_id.isin(C1_C2)]
+    out['own_validation_no_c1c2'] = dict(tasks=q.experiment_id.nunique(), E=stats(q.E), G=stats(q.G))
 
     # Text: agreement of the complete ordering with the terminal objective.
     out['rank_agreement'] = rank_agreement(d)

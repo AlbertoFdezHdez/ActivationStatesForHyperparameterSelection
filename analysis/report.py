@@ -184,6 +184,18 @@ def text_values(o, u, rep, mech, cost, scope, eps_counts, theory):
         'sec5.mech_bound_checks': mech.loc['ReLU', 'bound_checks'], 'sec5.mech_module_checks': mech.loc['ReLU', 'module_checks'],
         'sec5.main_mean_E': P*E['mean'], 'sec5.main_mean_G': P*G['mean'], 'sec5.main_mean_reduction': red('mean'),
         'sec5.main_cvar25_reduction': red('cvar25'), 'sec5.main_cvar5_reduction': red('cvar5'),
+        'sec5.main_cvar25_E': P*E['cvar25'], 'sec5.main_cvar25_G': P*G['cvar25'],
+        'sec5.main_cvar5_E': P*E['cvar5'], 'sec5.main_cvar5_G': P*G['cvar5'],
+        'sec5.extrap_mean': P*t3.loc['Eval. + extrapolation', 'mean'],
+        'sec5.extrap_cvar25': P*t3.loc['Eval. + extrapolation', 'cvar25'],
+        'sec5.extrap_cvar5': P*t3.loc['Eval. + extrapolation', 'cvar5'],
+        'sec5.extrap_worst': P*t3.loc['Eval. + extrapolation', 'worst'],
+        'sec5.own17_E': P*o['own_validation_no_c1c2']['E']['mean'],
+        'sec5.own17_G': P*o['own_validation_no_c1c2']['G']['mean'],
+        'sec5.asha_small_gap': P*max(abs(r.loc[(f'ASHA ({w})', 'G 1/2'), 'mean']-r.loc[(f'ASHA ({w})', 'Evaluation'), 'mean'])
+                                     for w in (4, 8)),
+        'sec5.bohb_G_vs_extrap': P*r.loc[('BOHB-style', 'G 1/2'), 'mean'],
+        'appC.complete_configurations': scope['eligible_configurations'],
         'sec5.changed_sets': int((p.set_E != p.set_G).sum()), 'sec5.improved_cells': int((p.gain > 1e-12).sum()),
         'sec5.worsened_cells': int((p.gain < -1e-12).sum()), 'sec5.tied_cells': int((p.gain.abs() <= 1e-12).sum()),
         'sec5.max_regret': P*max(E['worst'], G['worst']),
@@ -282,19 +294,14 @@ def _fig_order(i):
     return 'CMFPRV'.index(i[0])*10+int(i[1])
 
 
-def compare_figures(gen, exp, errata, known):
+def compare_figures(gen, exp):
     problems = []
     for key in ('fig2_task_gains', 'fig2_family_marks'):
         if len(gen[key]) != len(exp[key]):
             problems.append(f'{key}: length {len(gen[key])} vs {len(exp[key])}')
         for i, (a, b) in enumerate(zip(gen[key], exp[key])):
-            name = f'{key}[{i}]'
-            if number_matches(a, b):
-                continue
-            if name in errata and number_matches(a, errata[name]['reproduced']):
-                known.append(dict(key=name, published=b, reproduced=errata[name]['reproduced'], note=errata[name]['note']))
-            else:
-                problems.append(f'{name}: reproduced {a:.4f} vs published {b}')
+            if not number_matches(a, b):
+                problems.append(f'{key}[{i}]: reproduced {a:.4f} vs published {b}')
     for i, (a, b) in enumerate(zip(gen['fig2_family_means'], exp['fig2_family_means'])):
         for x, y in zip(a, b):
             if not number_matches(x, y):
@@ -313,22 +320,16 @@ def verify(T, text, figs):
     exp_t = json.loads((EXPECTED/'tables.json').read_text(encoding='utf8'))['tables']
     exp_x = json.loads((EXPECTED/'text.json').read_text(encoding='utf8'))['values']
     exp_f = json.loads((EXPECTED/'figures.json').read_text(encoding='utf8'))
-    errata = {e['key']: e for e in json.loads((EXPECTED/'errata.json').read_text(encoding='utf8'))['errata']}
     problems, checked = [], dict(tables=0, table_cells=0, text=0, figure_values=0)
     for label, rows in exp_t.items():
         problems += compare_rows(label, T[label], rows)
         checked['tables'] += 1
         checked['table_cells'] += sum(1 for r in T[label] for c in r if c is not None)
-    known = []
     for e in exp_x:
         value = text[e['key']]
-        ok = number_matches(value, e['published'])
-        if not ok and e['key'] in errata and number_matches(value, errata[e['key']]['reproduced']):
-            known.append(dict(key=e['key'], published=e['published'], reproduced=errata[e['key']]['reproduced'],
-                              note=errata[e['key']]['note']))
-        elif not ok:
+        if not number_matches(value, e['published']):
             problems.append(f"text {e['key']}: reproduced {value!r} vs published {e['published']!r} ({e['context']})")
         checked['text'] += 1
-    problems += compare_figures(figs, exp_f, errata, known)
+    problems += compare_figures(figs, exp_f)
     checked['figure_values'] = len(exp_f['fig2_task_gains'])+len(exp_f['fig2_family_marks'])+2*len(exp_f['fig2_family_means'])+len(exp_f['fig3_cells'])
-    return problems, known, checked
+    return problems, checked

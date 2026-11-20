@@ -2,7 +2,7 @@
 
     python reproduce.py               # offline analyses from the supplied tables (~1 min, CPU)
     python reproduce.py --replay      # also recompute all paired promotion repetitions (~8 min)
-    python reproduce.py --mechanism   # also rerun the small CPU mechanism study (needs torch)
+    python reproduce.py --mechanism   # also run the small CPU mechanism study (needs torch)
 
 Exit status 0 means every compared value matches the article at its printed precision.
 """
@@ -45,7 +45,7 @@ def jsonable(x):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--replay', action='store_true', help='recompute the 100/200 paired promotion repetitions')
-    parser.add_argument('--mechanism', action='store_true', help='rerun the CPU mechanism study (requires torch)')
+    parser.add_argument('--mechanism', action='store_true', help='run the CPU mechanism study (requires torch)')
     args = parser.parse_args()
     start = time.time()
     (OUT/'tables').mkdir(parents=True, exist_ok=True)
@@ -82,11 +82,11 @@ def main():
     measurements = None
     if args.mechanism:
         import subprocess
-        target = OUT/'mechanism_rerun'
+        target = OUT/'mechanism_run'
         subprocess.run([sys.executable, str(ROOT/'mechanism_study/local_mechanism.py'), '--output', str(target)], check=True)
         measurements = target/'measurements.csv'
     mech, n_mech = mechanism.summarize(measurements)
-    print('[4/6] mechanism study', 'rerun' if args.mechanism else 'summarized from supplied measurements', flush=True)
+    print('[4/6] mechanism study', 'recomputed' if args.mechanism else 'summarized from supplied measurements', flush=True)
 
     grids, rl_grid = benchmark.grids()
     catalog = benchmark.catalog()
@@ -100,12 +100,12 @@ def main():
     T = report.tables(o, u, rep, mech, grids, rl_grid, catalog)
     text = report.text_values(o, u, rep, mech, cost, scope, o['epsilon_counts'], ex)
     figs = report.figures(o)
-    problems, known, checked = report.verify(T, text, figs)
+    problems, checked = report.verify(T, text, figs)
     # RL learning-rate grid is printed in the text of Appendix C.2.
     rl_text = ', '.join(str(x) for x in rl_grid)
     if rl_text != '1e-05, 1.5e-05, 2.2e-05, 3.2e-05, 4.6e-05, 6.8e-05, 0.0001, 0.00015, 0.00022, 0.00032, 0.00046, 0.00068, 0.001, 0.0015, 0.0022, 0.003':
         problems.append('RL learning-rate grid differs from Appendix C.2')
-    if scope['experiments'] != 23 or scope['runs'] != 1104 or scope['eligible_configurations'] != 362 or len(o['pairs']) != 368:
+    if scope['experiments'] != 23 or scope['runs'] != 1104 or scope['eligible_configurations'] != 368 or len(o['pairs']) != 368:
         problems.append(f'scope differs: {scope}')
     if not status['input_hashes']['ok']:
         problems.append('input hashes differ from MANIFEST.sha256.json')
@@ -125,14 +125,12 @@ def main():
     (OUT/'text_values.json').write_text(json.dumps(text, indent=1, default=jsonable), encoding='utf8')
     (OUT/'figures.json').write_text(json.dumps(figs, indent=1, default=jsonable), encoding='utf8')
     (OUT/'uncertainty.json').write_text(json.dumps(u, indent=1, default=jsonable), encoding='utf8')
-    report_ = dict(ok=not problems, checked=checked, known_errata=known, problems=problems, status=status,
+    report_ = dict(ok=not problems, checked=checked, problems=problems, status=status,
                    options=vars(args), seconds=round(time.time()-start, 1),
                    environment=dict(python=sys.version.split()[0], numpy=np.__version__, pandas=pd.__version__))
     (OUT/'verification.json').write_text(json.dumps(report_, indent=2, default=jsonable), encoding='utf8')
     print(f"[6/6] compared {checked['tables']} tables ({checked['table_cells']} cells), {checked['text']} in-text numbers "
           f"and {checked['figure_values']} figure values in {report_['seconds']} s", flush=True)
-    for k in known:
-        print(f"      known erratum {k['key']}: article prints {k['published']}, data give {k['reproduced']} ({k['note']})")
     if problems:
         print(f'FAILED: {len(problems)} differences')
         for p in problems[:50]:

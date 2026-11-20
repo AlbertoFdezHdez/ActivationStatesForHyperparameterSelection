@@ -75,6 +75,6 @@ def lcpfn():
 def primary():
     """Primary candidate table with the LC-PFN forecasts attached."""
     d = configs().merge(lcpfn(), on=['config_id', 'tau'], how='left', validate='one_to_one')
-    assert len(d) == 1448 and d.config_id.nunique() == 362 and d.experiment_id.nunique() == 23
+    assert len(d) == 1472 and d.config_id.nunique() == 368 and d.experiment_id.nunique() == 23
     assert d.prediction_seeds.eq(3).all()
     return d

@@ -38,7 +38,7 @@ Optional modes:
 | Command | What it adds | Time |
 |---|---|---|
 | `python reproduce.py --replay` | Recomputes all paired promotion repetitions (ASHA: 100 arrival orders × 4/8/12 workers; Hyperband and BOHB-style: 200 streams each) from the run records instead of aggregating the supplied cells, and checks they are identical | ~8 min |
-| `python reproduce.py --mechanism` | Reruns the controlled mechanism study of Appendix D (needs `torch`, CPU) | ~30 s |
+| `python reproduce.py --mechanism` | Runs the controlled mechanism study of Appendix D (needs `torch`, CPU) | ~30 s |
 
 ## What reproduces what
 
@@ -79,8 +79,8 @@ Optional modes:
 | `data/run_configurations.jsonl.gz` | 1,104 | Exact recorded configuration text of every run, its original relative path and SHA-256 |
 
 Objectives are oriented for minimization (rewards are negated). The 1,104 runs are 368 nominal
-configurations × three seeds; 362 three-seed configurations with probe records at every primary
-prefix form the strict comparison pool (six RL configurations lack probe records).
+configurations × three seeds; all 368 three-seed configurations have utilization records at every
+primary prefix and form the strict comparison pool.
 
 Historical field names: columns such as `mean_oui`, `geometric_mean_oui` and `*_probe_oui`, and the
 training package `code/oui`, keep the name of the earlier Overfitting–Underfitting Indicator from
@@ -108,7 +108,7 @@ train_run.py            prepares or runs one archived training run
 analysis/               analysis package (selection, replays, uncertainty, catalog, report)
 mechanism_study/        CPU study of Appendix D
 data/                   tabular inputs (hashed in MANIFEST.sha256.json)
-expected/               numbers extracted from the article (errata.json lists none)
+expected/               numbers extracted from the article
 code/                   training programs per family and the shared activation statistic
 outputs/                written by reproduce.py
 ```

@@ -80,7 +80,7 @@ def measure(net,x,y):
         relu_bound_violations=sum(v+1e-10<b for b,v in bounds),relu_bound_coordinates=len(bounds))
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=Path(__file__).resolve().parents[1]/'outputs/mechanism_rerun')
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=Path(__file__).resolve().parents[1]/'outputs/mechanism_run')
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     torch.set_num_threads(2)
     generator=torch.Generator().manual_seed(270927)
