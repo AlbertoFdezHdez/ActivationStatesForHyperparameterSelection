@@ -64,6 +64,7 @@ Optional modes:
 | Table 17 | Held-out coefficient transfer (task, family) | `analysis/oneshot.py` | `data/runs.parquet` |
 | Table 18 | Objective robustness, global incumbent | `analysis/oneshot.py` | `data/runs.parquet` |
 | Table 19, §5.5 | Bootstrap (percentile, BCa), Student/delta, sign, Wilcoxon, sign-flip, leave-one-out, top-two influence | `analysis/uncertainty.py` | per-task means from `analysis/oneshot.py` |
+| §4.1, §4.3 | Learning-rate prior control, correlation of $G$ with learning rate and weight decay, Evaluation + LC-PFN, median-normalized regret | `analysis/controls.py` | `data/runs.parquet`, `data/lcpfn_predictions.csv` |
 | In-text numbers | 19-task validation-only check, rank correlations, costs, counts, worked examples | `analysis/report.py`, `analysis/benchmark.py`, `analysis/theory.py` | as above |
 
 ## Data

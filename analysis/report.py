@@ -258,6 +258,28 @@ def text_values(o, u, rep, mech, cost, scope, eps_counts, theory):
         'appE.top_two_share': P*u['top_two_fraction'], 'appE.rest_gain': P*u['rest_mean_gain'],
         'appE.rest_relative': P*u['rest_relative'], 'appE.sign_flip_assignments': 100_000,
     }
+    from . import controls
+    c = controls.run()
+    lr, mn = c['lr_orientation'], c['median_norm']
+    cost = lambda tau, k, n=16: tau+(k/n)*(1-tau)
+    v.update({
+        'sec4.median_norm_E': P*mn['E']['mean'], 'sec4.median_norm_G': P*mn['G']['mean'],
+        'sec4.median_norm_cvar_E': P*mn['E']['cvar25'], 'sec4.median_norm_cvar_G': P*mn['G']['cvar25'],
+        'sec4.median_norm_improved': mn['improved'], 'sec4.median_norm_worsened': mn['worsened'],
+        'sec4.median_norm_tied': mn['tied'],
+        'sec4.cost_tau10_k3': cost(.10, 3), 'sec4.cost_tau20_k1': cost(.20, 1),
+        'sec5.lcpfn_combo_mean': P*c['best']['LC-PFN']['mean'], 'sec5.lcpfn_combo_cvar25': P*c['best']['LC-PFN']['cvar25'],
+        'sec5.lcpfn_combo_cvar5': P*c['best']['LC-PFN']['cvar5'],
+        'sec5.lr_rho_median': c['rho_lr_abs_median'], 'sec5.lr_rho_negative': c['lr_negative_tasks'],
+        'sec5.lr_rho_positive': c['lr_positive_tasks'], 'sec5.wd_rho_median': c['rho_wd_abs_median'],
+        'sec5.wd_tasks': c['wd_tasks'],
+        'sec5.lr_prior_mean': P*c['best'][lr]['mean'], 'sec5.lr_prior_heldout': P*c['lr_heldout']['mean'],
+        'sec5.lr_prior_plus_G': P*c['lr_plus_G']['mean'],
+        'sec5.agg_LUD': P*t16.loc['Log AM/GM', 'mean'], 'sec5.agg_AM': P*t16.loc['Arithmetic mean', 'mean'],
+        'sec5.heldout_extrap': P*t17.loc[('experiment_id', 'Extrapolation'), 'mean'],
+        'sec5.family_E': P*E['mean'], 'abstract.mean_E': P*E['mean'], 'abstract.mean_G': P*G['mean'],
+        'sec5.heldout_extrap_cvar': P*t17.loc[('experiment_id', 'Extrapolation'), 'cvar25'],
+    })
     for key, value in theory.items():
         v['theory.'+key] = value
     v['theory.regret_example'] = P*theory['regret_example']

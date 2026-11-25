@@ -1,7 +1,7 @@
 {
  "source": {
-  "file": "main.tex (Overleaf project export, 2026-11-20)",
-  "sha256": "be2c6f750ca8d12aa775666cb474b7b3ba3237ac580ed17d03cc86f06ce0b55f"
+  "file": "main.tex (Overleaf project, 2026-11-26)",
+  "sha256": "92b1f1af6453711c4584d10e488cadbed1b1bb686cb61deea72fc4bde34baa19"
  },
  "values": [
   {
@@ -12,7 +12,7 @@
   {
    "key": "abstract.mean_reduction",
    "published": "27.40",
-   "context": "reduces mean selection regret by 27.40"
+   "context": "of the candidate-objective range, by 27.40"
   },
   {
    "key": "abstract.cvar25_reduction",
@@ -23,16 +23,6 @@
    "key": "abstract.cvar5_reduction",
    "published": "25.34",
    "context": "by 27.53\\% and 25.34\\%"
-  },
-  {
-   "key": "abstract.heldout_G",
-   "published": "3.42",
-   "context": "mean regret is 3.42\\% versus 3.91\\%"
-  },
-  {
-   "key": "abstract.heldout_E",
-   "published": "3.91",
-   "context": "mean regret is 3.42\\% versus 3.91\\%"
   },
   {
    "key": "sec2.sparsity_17",
@@ -487,12 +477,12 @@
   {
    "key": "sec5.final_E",
    "published": "7.14",
-   "context": "and from $7.14\\%$ to $5.94\\%$ using the final checkpoint"
+   "context": "Mean regret falls from $7.14\\%$ to $5.94\\%$ using the last checkpoint within budget and, to rounding, using the final checkpoint"
   },
   {
    "key": "sec5.final_G",
    "published": "5.94",
-   "context": "and from $7.14\\%$ to $5.94\\%$ using the final checkpoint"
+   "context": "Mean regret falls from $7.14\\%$ to $5.94\\%$ using the last checkpoint within budget and, to rounding, using the final checkpoint"
   },
   {
    "key": "sec6.later_prefix",
@@ -720,11 +710,6 @@
    "context": "changes its output from $6$ to $6.3$"
   },
   {
-   "key": "theory.four_input_coefficient",
-   "published": "0.2",
-   "context": "the linearized correction $0.2\\phi_1$ equals $r$"
-  },
-  {
    "key": "theory.selected_threshold_U08",
    "published": "0.4",
    "context": "at least two thirds of the units have utilization at least $0.4$"
@@ -853,6 +838,141 @@
    "key": "appC.complete_configurations",
    "published": "368",
    "context": "All 368 nominal configurations have complete utilization records for their three seeds"
+  },
+  {
+   "key": "abstract.mean_E",
+   "published": "3.91",
+   "context": "reduces mean selection regret from 3.91\\% to 2.84\\% of the candidate-objective range"
+  },
+  {
+   "key": "abstract.mean_G",
+   "published": "2.84",
+   "context": "reduces mean selection regret from 3.91\\% to 2.84\\% of the candidate-objective range"
+  },
+  {
+   "key": "sec4.median_norm_E",
+   "published": "13.49",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_G",
+   "published": "11.20",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_cvar_E",
+   "published": "51.91",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_cvar_G",
+   "published": "43.18",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_improved",
+   "published": "11",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_worsened",
+   "published": "10",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.median_norm_tied",
+   "published": "2",
+   "context": "mean regret then falls from $13.49\\%$ to $11.20\\%$, and \\acs{CVaR}$_{25}$ from $51.91\\%$ to $43.18\\%$, with the same task-level split of 11 gains, 10 losses and 2 ties"
+  },
+  {
+   "key": "sec4.cost_tau10_k3",
+   "published": "0.27",
+   "context": "costs $\\mathcal C=0.27$ of exhaustive training, and deciding at 20\\% with $K=1$ costs $0.25$"
+  },
+  {
+   "key": "sec4.cost_tau20_k1",
+   "published": "0.25",
+   "context": "costs $\\mathcal C=0.27$ of exhaustive training, and deciding at 20\\% with $K=1$ costs $0.25$"
+  },
+  {
+   "key": "sec5.lcpfn_combo_mean",
+   "published": "3.72",
+   "context": "gives mean $3.72\\%$, \\acs{CVaR}$_{25}$ $14.35\\%$ and \\acs{CVaR}$_5$ $39.78\\%$"
+  },
+  {
+   "key": "sec5.lcpfn_combo_cvar25",
+   "published": "14.35",
+   "context": "gives mean $3.72\\%$, \\acs{CVaR}$_{25}$ $14.35\\%$ and \\acs{CVaR}$_5$ $39.78\\%$"
+  },
+  {
+   "key": "sec5.lcpfn_combo_cvar5",
+   "published": "39.78",
+   "context": "gives mean $3.72\\%$, \\acs{CVaR}$_{25}$ $14.35\\%$ and \\acs{CVaR}$_5$ $39.78\\%$"
+  },
+  {
+   "key": "sec5.lr_rho_median",
+   "published": "0.78",
+   "context": "has median absolute value $0.78$, but its sign varies: averaged over prefixes it is negative in 16 experiments and positive in 7"
+  },
+  {
+   "key": "sec5.lr_rho_negative",
+   "published": "16",
+   "context": "has median absolute value $0.78$, but its sign varies: averaged over prefixes it is negative in 16 experiments and positive in 7"
+  },
+  {
+   "key": "sec5.lr_rho_positive",
+   "published": "7",
+   "context": "has median absolute value $0.78$, but its sign varies: averaged over prefixes it is negative in 16 experiments and positive in 7"
+  },
+  {
+   "key": "sec5.wd_rho_median",
+   "published": "0.07",
+   "context": "with median absolute value $0.07$ on the 17 tasks that vary it"
+  },
+  {
+   "key": "sec5.wd_tasks",
+   "published": "17",
+   "context": "with median absolute value $0.07$ on the 17 tasks that vary it"
+  },
+  {
+   "key": "sec5.lr_prior_mean",
+   "published": "3.74",
+   "context": "reaches at best $3.74\\%$ (favoring smaller rates, $\\lambda=1/4$); choosing that coefficient on the other tasks gives $4.65\\%$"
+  },
+  {
+   "key": "sec5.lr_prior_heldout",
+   "published": "4.65",
+   "context": "reaches at best $3.74\\%$ (favoring smaller rates, $\\lambda=1/4$); choosing that coefficient on the other tasks gives $4.65\\%$"
+  },
+  {
+   "key": "sec5.lr_prior_plus_G",
+   "published": "2.93",
+   "context": "Adding the half-weight $G$ rank to the optimized prior lowers its mean to $2.93\\%$"
+  },
+  {
+   "key": "sec5.agg_LUD",
+   "published": "2.91",
+   "context": "alone reaches $2.91\\%$ and the arithmetic mean $3.37\\%$"
+  },
+  {
+   "key": "sec5.agg_AM",
+   "published": "3.37",
+   "context": "alone reaches $2.91\\%$ and the arithmetic mean $3.37\\%$"
+  },
+  {
+   "key": "sec5.heldout_extrap",
+   "published": "3.45",
+   "context": "Evaluation plus extrapolation reaches $3.45\\%$, while $G$ keeps the lower \\acs{CVaR}$_{25}$ ($13.15\\%$ versus $13.23\\%$)"
+  },
+  {
+   "key": "sec5.heldout_extrap_cvar",
+   "published": "13.23",
+   "context": "Evaluation plus extrapolation reaches $3.45\\%$, while $G$ keeps the lower \\acs{CVaR}$_{25}$ ($13.15\\%$ versus $13.23\\%$)"
+  },
+  {
+   "key": "sec5.family_E",
+   "published": "3.91",
+   "context": "Holding out whole families gives mean regret $3.41\\%$ versus $3.91\\%$ for Evaluation"
   }
  ]
 }
